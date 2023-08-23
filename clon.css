@@ -1,0 +1,13 @@
+.alto{
+    display: flex; justify-content: space-around;
+    background-color: #3b5998;
+}
+
+.ingreso-datos{
+    margin-top: 30px;
+    color: white;
+}
+
+.color{
+    color: white;
+}
