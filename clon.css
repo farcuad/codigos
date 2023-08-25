@@ -16,13 +16,11 @@
     color: white;
 }
 
-.separacion,
-input {
-    height: 25px;
-}
 
-.input-Especifico {
+#input-Especifico {
     padding-right: 154px;
+    width: 140px;
+    height: 30px;
 }
 
 .agrupar{
@@ -31,4 +29,12 @@ input {
 
 .lejos{
     display: flex;
+}
+.id{
+    display: flex;justify-content: space-around;align-items: center;
+}
+
+.img{
+    width: 300px;
+    height: 300px;
 }

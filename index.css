@@ -1,0 +1,33 @@
+.centro{
+    display: flex; flex-direction: column; align-items: center;
+    border-style: solid;
+    border-color: rgb(233, 95, 15);
+    border-radius: 50px;
+    background-image: url(1/img/atardecer.png);
+    background-size: cover;
+    color: white;  
+}   
+
+a:link{
+    color: brown;
+}
+
+a:visited{
+    color: rgb(255, 30, 0);
+}
+
+a:hover{
+    color: aqua;
+}
+
+a:active{
+    color: rgb(243, 84, 84);
+}
+
+a{
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    border-color: brown;
+    border-style: solid;
+    border-radius: 20px;
+    
+}
