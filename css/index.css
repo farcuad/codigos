@@ -3,7 +3,7 @@
     border-style: solid;
     border-color: rgb(233, 95, 15);
     border-radius: 50px;
-    background-image: url(1/img/atardecer.png);
+    background-image: url(../assests/img/atardecer.png);
     background-size: cover;
     color: white;  
 }   
