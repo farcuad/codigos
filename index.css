@@ -1,0 +1,16 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.centro{
+    background-color: gray;
+    border-radius: 20%;
+    margin: 16px 25% 0 30%;
+    padding: 8px;
+}
+
+a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+}
