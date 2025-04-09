@@ -1,32 +1,130 @@
-*{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.container{
-    background-color: aqua;
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-decoration: none;
+    color: black;
+    padding: 32px;
+}
+
+.fa-dumbbell {
+    font-size: 40px;
+}
+
+.a-1 {
+    text-decoration: none;
+    padding: 16px;
+    font-size: 20px;
+    color: white;
+}
+
+.a-1:hover {
+    background-color: gray;
+    border-radius: 16px;
+    color: white;
+}
+
+body {
+    background-color: #4e73df;
+}
+
+.titulo{
+    font-size: 40px;
+    font-family: monospace;
+}
+
+h4 {
+    padding-top: 8px;
+    font-size: 20px;
+}
+
+.parrafo {
+    padding-top: 8px;
+    font-size: 20px;
+    font-family: monospace;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 5% 0;
+}
+
+
+.container-2 {
+    text-align: center;
+    background-image: url(../assests/img/fitness.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 500px 500px;
+    border-radius: 15%;
+    box-shadow: 0 0 5px black;
+    padding: 50px 50px 250px 50px;
+    color: white;
+}
+
+h2{
+    font-family: "Garamond", "Times New Roman", serif;
+    font-weight: 100;
+}
+
+.container-3 {
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 32px 38% 0 38% ;
-    padding: 0 0 32px 0;
-    border-radius: 16px ;
-    box-shadow: 5px 5px 5px  grey;
-    
+    margin: 32px 5% 0 5%;
+    padding: 10px 50px 40px 50px;
+    border-radius: 16px;
+    box-shadow:  0 0 5px black;
+
 }
 
-.label{
-    padding: 0 0 8px 0;
-    margin: 0 21% 0 0;
-}
-
-.input{
+.input {
     padding: 8px;
     font-size: 1rem;
-    border-radius: 8px;
+    border-radius: 30px;
+    margin-top: 10px;
 }
 
-.button{
+.button {
     margin-top: 16px;
     padding: 8px 24px 8px 24px;
     border-radius: 8px;
+}
+
+.warnings {
+    width: 200px;
+    text-align: center;
+    margin: 8px;
+    color: black;
+    padding-top: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    margin-top: 16px;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.fa-solid{
+    cursor: pointer;
+}
+
+div,input{
+    margin-left: 20px;
 }

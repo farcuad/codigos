@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <script src="https://kit.fontawesome.com/f919b01a4f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/registro.css">
+    <title>Registro</title>
 </head>
+
 <body>
     <form id="form" action="#" class="container">
         <h2>Registrarse</h2>
 
-        <label class="label"  for="">Nuevo usuario</label>
-        <input class="input" id="usuario" type="text" placeholder="Nuevo usuario">   
-        
-        <label class="label"  for="">Correo electrónico</label>
-        <input class="input" id="email" type="text" placeholder="Correo electrónico">
+        <input class="input" id="usuario" type="text" placeholder="Nuevo usuario">
+        <span class="warnings" id="span"></span>
 
-        <label class="label"  for="">Contraseña</label>
-        <input class="input" id="password" type="password" placeholder="Contraseña">
+        <input class="input" id="email" type="text" placeholder="Correo electrónico">
+        <span class="warnings" id="span-2"></span>
+        <div>
+            <input class="input" id="password" type="password" placeholder="Contraseña">
+            <i id="toggle" class="fa-solid fa-eye"></i>
+            <span class="warnings" id="warnings"></span>
+        </div>
+
+        <div>
+            <input class="input" id="password-confirmation" type="password" placeholder="Confirmar contraseña">
+            <i id="toggle2" class="fa-solid fa-eye"></i>
+            <span class="warnings" id="warnings-2"></span>
+        </div>
 
         <button type="submit" class="buttom">Registrarse</button>
-        <p class="warnings" id="warnings"></p>
+
     </form>
 
 
     <script src="../js/registro.js"></script>
 </body>
+
 </html>

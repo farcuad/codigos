@@ -1,25 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loggin</title>
     <link rel="stylesheet" href="../css/loggin.css">
+    <script src="https://kit.fontawesome.com/f919b01a4f.js" crossorigin="anonymous"></script>
+    <title>Fitness</title>
 </head>
+
 <body>
-    <section>
-        <form action="#" class="container">
+    <header class="header">
+        <i class="fa-solid fa-dumbbell"></i>
+        <div>
+            <a class="a-1" href="#">Sobre mi</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="container-2">
+            <h2 class="titulo">Andrés Calles</h2>
+            <h4>Entrenador Personal</h4>
+            <p class="parrafo">Rutinas maquiavelicas</p>
+        </div>
+        <form action="#" id="form" class="container-3">
             <h2>Iniciar sesión</h2>
-            <label class="label" for="">Ususario</label>
-            <input class="input" type="text" placeholder="Usuario">
 
-            <label class="label" for="">Contraseña</label>
-            <input class="input" type="text" placeholder="Contraseña">
+            <input class="input" id="usuario" type="text" placeholder="Usuario">
+            <span class="warnings" id="span"></span>
 
-            <button class="button">Entrar</button>
+            <div>
+                <input class="input" id="password" type="text" placeholder="Contraseña">
+                <i id="toggle" class="fa-solid fa-eye"></i>
+                <p class="warnings" id="warnings"></p>
+            </div>
+
+            <button id="button" class="button">Entrar</button>
+
+            <a href="../pages/registro.html">Crear cuenta</a>
         </form>
-    </section>
+    </div>
+
 
     <script src="../js/loggi.js"></script>
 </body>
+
 </html>
