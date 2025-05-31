@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contenedor {
+    display: flex;
+}
+
+aside {
+    width: 200px;
+    max-width: 200px;
+    background-color: #686666;
+    margin-left: 0;
+    color: white;
+    padding: 8px 0 16px 16px;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ddd;
+    padding: 10px;
+    flex-grow: 1;
+}
+
+
+.fa-bars:hover {
+    rotate: 180deg;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    color: black;
+}
+
+.img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.divisor {
+    display: flex;
+    align-items: center;
+}
+
+.divisor:hover {
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    padding: 16px;
+    background-color: antiquewhite;
+    border-radius: 16px;
+}
+
+.pointer {
+    cursor: pointer;
+    padding: 8px;
+}
+
+
+.perfil {
+    display: flex;
+    flex-direction: row;
+}
+
+h3 {
+    font-size: 24px;
+
+}
+
+li {
+    cursor: pointer;
+    padding: 8px;
+    font-size: 20px;
+}
+
+li:hover {
+    background-color: rgb(161, 161, 159);
+    border-radius: 16px;
+}
+
+aside.oculto {
+    max-width: 0;
+    opacity: 0;
+    padding: 0;
+}
+
+.titulo {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+.fa-solid {
+   float: right;
+   cursor: pointer;
+   padding: 20px;
+   color: #27aa43;
+   margin-right: 16px;
+}
+
+.fa-plus:hover {
+    background-color: antiquewhite;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+
+}
+
+.fa-trash-can{
+    color: red;
+}
+
+.fa-trash-can:hover {
+    background-color: rgb(243, 124, 116);
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+}
+
+.fa-pen-to-square{
+    color: gold;
+}
+
+.fa-pen-to-square:hover {
+    background-color: #f5f5b5;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+}
+
+input{
+    border: none;
+    padding: 4px 50% 4px 0;
+    margin: 8px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+}

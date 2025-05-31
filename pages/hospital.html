@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f919b01a4f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/hospital.css">
+    <title>Hospital</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <aside id="aside">
+            <h3>Pages</h3>
+            <ul>
+                <li id="hospital">Hospital</li>
+                <li>Ferreteria</li>
+            </ul>
+        </aside>
+
+        <nav>
+            <i id="iconoOcultar" class="fa-solid fa-bars"></i>
+            <div class="divisor">
+                <img src="../assests/img/perfil.jpeg" alt="img.perfil" class="img">
+                <p class="pointer">Andrés Calles</p>
+            </div>
+
+        </nav>
+    </div>
+
+    <main>
+        <h1 class="titulo">Registro de Pacientes</h1>
+        <div class="contenedor-2">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Edad</th>
+                        <th>Telefono</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+
+
+            </table>
+        </div>
+        <i id="agregar" class="fa-solid fa-plus"></i>
+        <i id="guardar" class="fa-solid fa-pen-to-square"></i>
+        <i id="mostrar" class="fa-solid fa-trash-can"></i>
+    </main>
+
+
+    <script src="../js/hospital.js"></script>
+
+
+</body>
+
+</html>

@@ -7,14 +7,16 @@ const toggle = document.getElementById("toggle");
 
 form.addEventListener("submit" , e => {
     e.preventDefault();
+    let usuarioGuardado = localStorage.getItem("usuarioGuardado");
+    let passwordGuardado = localStorage.getItem("passwordGuardado");
     let formulario = true;
-    if (usuario.value.length < 6) {
+    if (usuario.value !== usuarioGuardado) {
         span.innerText = "El usuario no es valido";
         formulario = false;
     }else{
         span.innerText = "El usuario es valido";
     }
-    if (password.value.length < 8) {
+    if (password.value !== passwordGuardado) {
         parrafo.innerText = "La contraseña no es valida";
         formulario = false;
     }else{
@@ -24,11 +26,10 @@ form.addEventListener("submit" , e => {
     }
 })
 
+console.log(localStorage.getItem("usuario"));
+
 toggle.addEventListener("click", () => {
     const type = password.getAttribute("type") === "password" ? "text" : "password";
     password.setAttribute("type", type);
     toggle.classList.toggle("fa-eye-slash");
 })
-
-
-

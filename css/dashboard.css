@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex; 
+  }
+  
+  aside {
+    width: 200px; 
+    background-color: #686666;
+    margin-left: 0; 
+    color: white;
+    padding: 8px 0 16px 16px;
+
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: #ddd;
+    padding: 10px;
+    flex-grow: 1; 
+  }
+
+.fa-bars:hover {
+    rotate: 180deg;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.divisor {
+    display: flex;
+    align-items: center;
+}
+
+.divisor:hover {
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    padding: 16px;
+    background-color: antiquewhite;
+    border-radius: 16px;
+}
+
+.pointer {
+    cursor: pointer;
+    padding: 8px;
+}
+
+
+.perfil {
+    display: flex;
+    flex-direction: row;
+}
+
+h3{
+    font-size: 24px;
+    
+}
+
+li{
+    cursor: pointer;    
+    padding: 8px;
+    font-size: 20px;
+}
+
+li:hover {
+    background-color: rgb(161, 161, 159);
+    border-radius: 16px;
+}
+
+.oculto {
+    display: none;
+}

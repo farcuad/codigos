@@ -15,7 +15,7 @@ form.addEventListener("submit", e=>{
     let formulario = true;
     let regexemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     if (usuario.value.length < 6) {
-        span.innerHTML = "El usuario no es valido <br>"
+        span.innerHTML = "El usuario no es valido "
         formulario = false
     }else{
         span.innerHTML = "El usuario es valido"
@@ -39,7 +39,18 @@ form.addEventListener("submit", e=>{
         span3.innerHTML = "Las contrasenas coinciden <br>"
     }
     if (formulario) {
+        localStorage.setItem("usuarioGuardado", usuario.value);
+        localStorage.setItem("emailGuardado", email.value);
+        localStorage.setItem("passwordGuardado", password.value);
         window.location.href = "../pages/loggin.html";
+    }
+})
+
+password.addEventListener("input", () => {
+    if (password.value.length < 8) {
+        parrafo.innerHTML = "La contraseña no es valida"
+    }else{
+        parrafo.innerHTML = "La contraseña es valida"
     }
 })
 

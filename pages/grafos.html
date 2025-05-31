@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo sobre grafos</title>
+</head>
+
+<body>
+    <h1>Algoritmos Sobre Grafos</h1>
+
+
+
+    <script>
+        /**
+ * Implementación del algoritmo BFS (Búsqueda en Amplitud).
+ * Encuentra la distancia más corta desde un nodo inicial en un grafo no ponderado.
+ *
+ * @param {Object.<string, string[]>} graph El grafo representado como una lista de adyacencia.
+ * Ejemplo: { 'A': ['B', 'C'], 'B': ['D'], ... }
+ * @param {string} startNode El nodo desde el cual iniciar la búsqueda.
+ * @returns {Object} Un objeto que contiene:
+ * - distances: Un objeto con la distancia más corta de `startNode` a cada nodo.
+ * - parents: Un objeto con el nodo padre de cada nodo en el camino más corto.
+ */
+        function bfs(graph, startNode) {
+            const queue = [];
+            const distances = {};
+            const visited = {}; // Usamos un objeto para simular un conjunto o mapa booleano
+            const parents = {};
+
+            // 1. Inicialización
+            for (const node in graph) {
+                visited[node] = false;
+                distances[node] = Infinity;
+                parents[node] = null;
+            }
+
+            // 2. Preparar el nodo inicial
+            visited[startNode] = true;
+            distances[startNode] = 0;
+            queue.push(startNode);
+
+            // 3. Recorrido
+            while (queue.length > 0) {
+                const currentNode = queue.shift(); // Desencolar el primer elemento
+
+                // Para cada vecino del nodo actual
+                if (graph[currentNode]) { // Asegurarse de que el nodo exista en el grafo y tenga vecinos
+                    for (const neighbor of graph[currentNode]) {
+                        if (!visited[neighbor]) {
+                            visited[neighbor] = true;
+                            distances[neighbor] = distances[currentNode] + 1;
+                            parents[neighbor] = currentNode;
+                            queue.push(neighbor); // Encolar el vecino
+                        }
+                    }
+                }
+            }
+
+            return { distances, parents };
+        }
+
+        // --- Ejemplo de uso de BFS ---
+        console.log("--- BFS Ejemplo ---");
+        const graphBFS = {
+            'A': ['B', 'C'],
+            'B': ['A', 'D', 'E'],
+            'C': ['A', 'F'],
+            'D': ['B'],
+            'E': ['B', 'F'],
+            'F': ['C', 'E']
+        };
+
+        const startNodeBFS = 'A';
+        const resultBFS = bfs(graphBFS, startNodeBFS);
+        console.log(`Distancias desde ${startNodeBFS}:`, resultBFS.distances);
+        console.log(`Padres para reconstruir caminos desde ${startNodeBFS}:`, resultBFS.parents);
+
+        // Un ejemplo para reconstruir un camino
+        function reconstructPath(parents, endNode, startNode) {
+            const path = [];
+            let currentNode = endNode;
+            while (currentNode !== null) {
+                path.unshift(currentNode); // Añadir al principio para tener el orden correcto
+                if (currentNode === startNode) break; // Detener si llegamos al inicio
+                currentNode = parents[currentNode];
+            }
+            // Si el camino no empieza con startNode, significa que endNode no es alcanzable desde startNode
+            if (path[0] !== startNode) return null;
+            return path;
+        }
+
+        const pathToEndF = reconstructPath(resultBFS.parents, 'F', startNodeBFS);
+        console.log(`Camino de ${startNodeBFS} a F:`, pathToEndF); // Debería ser ['A', 'C', 'F'] o ['A', 'B', 'E', 'F'] dependiendo del orden de los vecinos.
+
+
+        /**
+ * Implementación del algoritmo DFS (Búsqueda en Profundidad) - Versión Recursiva.
+ * Recorre un grafo explorando lo más profundo posible por cada rama.
+ *
+ * @param {Object.<string, string[]>} graph El grafo representado como una lista de adyacencia.
+ * @param {string} startNode El nodo desde el cual iniciar la búsqueda.
+ * @returns {string[]} Un arreglo con el orden de los nodos visitados.
+ */
+        function dfsRecursive(graph, startNode) {
+            const visited = {};
+            const traversalOrder = []; // Para almacenar el orden en que se visitan los nodos
+
+            // 1. Inicialización
+            for (const node in graph) {
+                visited[node] = false;
+            }
+
+            // Función auxiliar recursiva
+            function dfsVisit(currentNode) {
+                visited[currentNode] = true;
+                traversalOrder.push(currentNode); // Añadir al orden de recorrido
+
+                if (graph[currentNode]) { // Asegurarse de que el nodo exista en el grafo y tenga vecinos
+                    for (const neighbor of graph[currentNode]) {
+                        if (!visited[neighbor]) {
+                            dfsVisit(neighbor); // Llamada recursiva para el vecino no visitado
+                        }
+                    }
+                }
+            }
+
+            // 3. Inicio del recorrido
+            // Si quieres recorrer todo el grafo (incluso si no es conexo), descomenta el siguiente bloque:
+            // for (const node in graph) {
+            //     if (!visited[node]) {
+            //         dfsVisit(node);
+            //     }
+            // }
+            // O simplemente inicia desde un nodo específico:
+            dfsVisit(startNode);
+
+            return traversalOrder;
+        }
+
+        // --- Ejemplo de uso de DFS Recursivo ---
+        console.log("\n--- DFS Recursivo Ejemplo ---");
+        const graphDFS = {
+            'A': ['B', 'C'],
+            'B': ['D', 'E'],
+            'C': ['F'],
+            'D': [],
+            'E': ['F'],
+            'F': []
+        };
+
+        const startNodeDFS = 'A';
+        const resultDFS_recursive = dfsRecursive(graphDFS, startNodeDFS);
+        console.log(`Orden de recorrido DFS desde ${startNodeDFS}:`, resultDFS_recursive); // Ejemplo: ['A', 'B', 'D', 'E', 'F', 'C'] (dependiendo del orden de vecinos)
+    </script>
+</body>
+
+</html>
